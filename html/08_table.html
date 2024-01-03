@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{ 
+            border: 1px solid black;
+        }
+        table{
+            width : 50%
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- 표: table -->
+    <!-- 행: tr -->
+    <!-- 셀: td(데이터), th(열제목) -->
+    <!-- thead - 제목이 들어가는 모든 tr 태그들 -->
+    <!-- tbody - 데이터가 들어가는 모든 tr태그들 -->
+    <!-- tfoot - 집계가 들어가는 부분 -->
+    <!-- rowspan, colspan - 셀 병합 -->
+    <table>
+        <thead>
+        <tr>
+            <th>이름</th>
+            <th>이름</th>
+            <th>이름</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>유재석</td>
+            <td>유재석</td>
+            <td>유재석</td>
+        </tr>
+        <tr>
+            <td>유재석</td>
+            <td>유재석</td>
+            <td>유재석</td>
+        </tr>
+        <tr>
+            <td>유재석</td>
+            <td>유재석</td>
+            <td>유재석</td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>제목1</th>
+                <th>제목2</th>
+                <th>제목3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>내용1</td>
+                <td>내용2</td>
+                <td colspan>내용3</td>
+            </tr>
+            <tr>
+                <td>내용1</td>
+                <td>내용2</td>
+                <td>내용3</td>
+            </tr>
+            <tr>
+                <td colspan="2">내용1</td>
+                <!-- <td>내용2</td> -->
+                <td>내용3</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
