@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+    <h1>당신이 배우고 싶은 언어는?(다중선택 가능)</h1>
+    <div>
+        <input type="checkbox" name="check" id="check_1">
+        <label for="check_1">HTML</label>
+
+        <input type="checkbox" name="check" id="check_2">
+        <label for="check_2">JavaScript</label>
+
+        <input type="checkbox" name="check" id="check_3">
+        <label for="check_3">HyperTextMarkupLanguage</label>
+    </div>
+    <h1>당신이 배우고 싶은 언어는? (하나만 선택 가능)</h1>
+        <div>
+            <input type="radio" name="rdo_1" id="radio_1">
+            <label for="radio_1">HTML</label>
+
+            <input type="radio" name="rdo_1" id="radio_2">
+            <label for="radio_2">HTML</label>
+
+            <input type="radio" name="rdo_1" id="radio_3">
+            <label for="radio_3">HTML</label>
+        </div>  
+        
+        <div>
+            <label for="FavColor">당신이 가장 좋아하는 색상은?</label>
+            <input type="color" id="FavColor" value="">
+        </div>
+        <div>
+            <label for="date">태어난 날짜는?</label>
+            <input type="date" id="date">
+        </div>
+        <div>
+            <label for="datetime">입국한 날짜 시간은?</label>
+            <input type="datetime-local" id="datetime">
+        </div>
+        <div>
+            <label for="">이메일을 입력하세요</label>
+            <input type="email">
+            <button type="submit">저장</button>
+        </div>
+        <div>
+            <input type="file">
+        </div>
+
+        <div>
+            <label for="userPass">비밀번호</label>
+            <input type="password" id="userPass">
+        </div>
+        <!--전화번호-->
+            <label for="phone">전화번호</label>
+            <input type="tel" id="phone" value="" pattern="^010-\d{4}-\d{4}$" /> 
+    </form>
+</body>
+</html>
