@@ -22,3 +22,4 @@ function dance(){
 }
 
 checkMood("good",cry,sing);
+
