@@ -1,6 +1,8 @@
 package com.example.study_spring.controller;
 
+import com.example.study_spring.dto.ArticleForm;
 import com.example.study_spring.dto.MemberForm;
+import com.example.study_spring.entity.Article;
 import com.example.study_spring.entity.Member;
 import com.example.study_spring.repository.MemberRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -89,17 +92,23 @@ public class MemberController {
         //1. dto -> entity
         Member member = form.toEntity();
         //2. db에서 값꺼내오기
-        log.info(member.toString());
-//
-//        Member target = memberRepository.findById().orElse(null);
-//        //3.null인지 확인하고 수정
-//        if(target!=null){
-//            memberRepository.save(memberEntity);
-//        }
-//        //4. 뷰페이지 리다이렉트
-//        return "redirect:/members/"
-        return"";
+        Member target = memberRepository.findById(member.getId()).orElse(null);
+        //3.null인지 확인하고 수정
+        if(target!=null){
+         memberRepository.save(member);
+        }
+         //4. 뷰페이지 리다이렉트
+        return "redirect:/members/" + member.getId();
     }
     //삭제 Delete
+    @GetMapping("/members/{id}/delete")
+    public String getDelete(@PathVariable Long id, RedirectAttributes rttr){
+        Member member = memberRepository.findById(id).orElse(null);
+        if(member!=null){
+            memberRepository.delete(member);
+            rttr.addFlashAttribute("msg","삭제되었지롱");
+        }
+        return"redirect:/members";
+    }
 
 }

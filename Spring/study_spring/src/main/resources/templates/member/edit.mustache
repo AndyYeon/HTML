@@ -4,7 +4,7 @@
     <h2>회원가입</h2>
     <form action="/members/update" method="post">
         {{#member}}
-        <input name="id" type="hidden" {{id}}>
+        <input name="id" type="hidden" value="{{id}}">
         <label for="username">아이디<span class="required">*</span></label>
         <input value="{{member_id}}" type="text" id="username" name="member_id" placeholder="아이디" required>
 
