@@ -1,0 +1,28 @@
+<!-- 선택한 회원의 상세 조회-->
+{{>layouts/header}}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">로그인 아이디</th>
+        <th scope="col">비밀번호</th>
+        <th scope="col">email</th>
+        <th scope="col">nickname</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#Member}}
+    <tr>
+        <th>{{id}}</th>
+        <td>{{member_id}}</td>
+        <td>{{member_pw}}</td>
+        <td>{{member_email}}</td>
+        <td>{{member_nickname}}</td>
+    </tr>
+    {{/Member}}
+    </tbody>
+</table>
+<a class="btn btn-primary" href="/members/{{id}}/update">수정</a>
+<a class="btn btn-primary" href="/members/{{id}}/delete">삭제</a>
+<a class="btn btn-primary" href="/members">목록</a>
+{{>layouts/footer}}

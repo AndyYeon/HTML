@@ -11,10 +11,13 @@
     {{#article}}
     <tr>
         <th>{{id}}</th>
-        <td colspan="2">{{title}}</td>
+        <td>{{title}}</td>
         <td>{{content}}</td>
     </tr>
     {{/article}}
     </tbody>
 </table>
+<a href="/articles/{{article.id}}/edit" class="btn btn-primary">수정</a>
+<a href="/articles/{{article.id}}/delete" class="btn btn-primary">삭제</a>
+<a href="/articles">Go to Article List</a>
 {{>layouts/footer}}

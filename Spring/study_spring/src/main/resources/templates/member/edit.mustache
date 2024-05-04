@@ -1,0 +1,82 @@
+<!--회원가입-->
+{{>layouts/header}}
+<div class="container">
+    <h2>회원가입</h2>
+    <form action="/members/update" method="post">
+        {{#member}}
+        <input name="id" type="hidden" {{id}}>
+        <label for="username">아이디<span class="required">*</span></label>
+        <input value="{{member_id}}" type="text" id="username" name="member_id" placeholder="아이디" required>
+
+        <label for="password">비밀번호<span class="required">*</span></label>
+        <input value="{{member_pw}}" type="password" id="password" name="member_pw" placeholder="비밀번호" required>
+
+        <label for="email">이메일<span class="required">*</span></label>
+        <input value="{{member_email}}"  type="email" id="email" name="member_email" placeholder="이메일" required>
+
+        <label for="nickname">닉네임</label>
+        <input value="{{member_nickname}}"  type="text" id="nickname" name="member_nickname" placeholder="닉네임">
+
+        <input type="submit" value="가입하기">
+            {{/member}}
+            </form>
+</div>
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 300px;
+        margin: 100px auto;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .container input[type="text"],
+    .container input[type="password"],
+    .container input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .container label {
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    .container input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+
+    .container input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    .required {
+        color: red;
+    }
+</style>
+
+{{>layouts/footer}}
